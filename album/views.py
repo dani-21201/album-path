@@ -38,3 +38,13 @@ class PhotoCreate(CreateView):
 class PhotoDelete(DeleteView):
     model = Photo
     success_url = reverse_lazy('photo-list')	
+
+class CategoryUpdate(UpdateView):
+	model = Category
+	fields = '__all__'    
+class CategoryCreate(CreateView):
+	model = Category
+	fields = '__all__'
+class CategoryDelete(DeleteView):
+    model = Category
+    success_url = reverse_lazy('category-list')	

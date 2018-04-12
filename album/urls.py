@@ -19,16 +19,22 @@ from album import views
 
 
 urlpatterns = [
-    path('',views.first_view,name='Hola'),
+    path('',views.first_view,name='base'),
     path('category/',views.category,name='category-list'),
     path('category/<int:category_id>/detail/', views.category_detail, name='category-detail'),
     
     path('photo/', views.PhotoListView.as_view(), name='photo-list'),
     path('photo/<int:pk>/detail/', views.PhotoDetailView.as_view(), name='photo-detail'),
-    # Update
+    # Update foto
     path('photo/<int:pk>/update/', views.PhotoUpdate.as_view(), name='photo-update'),
-    #Create
+    #Create foto
     path('photo/create/', views.PhotoCreate.as_view(), name='photo-create'),
-    #Delete
+    #Delete foto
     path('photo/<int:pk>/delete/', views.PhotoDelete.as_view(), name='photo-delete'),
+     # Update category
+    path('category/<int:pk>/update/', views.CategoryUpdate.as_view(), name='category-update'),
+    #Create category
+    path('category/create/', views.CategoryCreate.as_view(), name='category-create'),
+    #Delete category
+    path('category/<int:pk>/delete/', views.CategoryDelete.as_view(), name='category-delete'),
 ]

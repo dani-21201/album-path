@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block section %}
-    <h2>Photo</h2>
+    <h2>Categoria</h2>
     <hr>
 {% endblock section %}
 
@@ -16,15 +16,15 @@
                         <h3 class="panel-title">{{ p.title }}</h3>
                     </div>
                     <div class="panel-body">
-                        <a href="{% url "photo-detail" p.id %}">
-                            <img src="{% static p.photo.url %}" style="width:200px;height:200px;"/>
+                        <a href="{% url "category-detail" p.id %}">
+                           
                         </a>
                     </div>
                     <div class="panel-footer">
                         {% if p.comment %}
                             {{ p.comment }}
                         {% else %}
-                            <a href="{% url "photo-update" p.id %}">edit comments</a>
+                            <a href="{% url "category-update" p.id %}">edit comments</a>
                         {% endif %}
                     </div>
                 </div>
